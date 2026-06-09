@@ -22,9 +22,6 @@ public class Cleric {
     }
 
     Cleric(String name) {
-        if (name == null) {
-            throw new IllegalArgumentException("이름 없는 성직자는 생성 할 수 없습니다.");
-        }
         this.name = name;
         this.hp = Cleric.maxHp;
         this.mp = Cleric.maxMp;
