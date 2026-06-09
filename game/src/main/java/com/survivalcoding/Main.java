@@ -5,24 +5,23 @@ package com.survivalcoding;
 public class Main {
     public static void main(String[] args) {
         // 인스턴스 생성
-        Hero hero = new Hero();
         Cleric cleric = new Cleric();
 
-        int MP, MaxHP, MaxMP;
+        int CHP, CMP, CMaxHP, CMaxMP;
 
-        hero.name = "Cleric";
-        cleric.hp = 50;
-        cleric.mp = 10;
-        MaxHP = cleric.maxhp;
-        MaxMP = cleric.maxmp;
-        System.out.println(hero.name + " Create");
+        cleric.name = "Cleric";
+        CHP = cleric.hp;
+        CMP = cleric.mp;
+        CMaxHP = cleric.maxHp;
+        CMaxMP = cleric.maxMp;
+        System.out.println(cleric.name + " Create");
 
         cleric.selfAid();
-        System.out.println(hero.name + " MP -5");
-        System.out.println("Now MP " + cleric.mp);
+        System.out.println(cleric.name + " MP -5");
+        System.out.println("Now MP " + CMP);
 
         int result = cleric.pray(1);
         System.out.println(result);
-        System.out.println("Now MP" + cleric.mp);
+        System.out.println("Now MP" + CMP);
     }
 }
