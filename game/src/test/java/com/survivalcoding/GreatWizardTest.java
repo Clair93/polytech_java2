@@ -23,7 +23,7 @@ class GreatWizardTest {
     }
 
     @Test
-    @DisplayName("Wizard heal에 따른 마나 감소와 체력 증가")
+    @DisplayName("Wizard heal에 따른 마나 감소와 Hero 체력 증가")
     void wizradHeal() {
         wizard.heal(hero);
         assertEquals(90, wizard.getMp());
@@ -37,7 +37,7 @@ class GreatWizardTest {
     }
 
     @Test
-    @DisplayName("GreatWizard Heal 계산")
+    @DisplayName("GreatWizard Heal에 따른 마나 감소와 Hero 체력 증가")
     void greatWizardHeal() {
         greatWizard.heal(hero);
         assertEquals(145, greatWizard.getMp());
