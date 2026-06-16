@@ -15,28 +15,28 @@ class WizardTest {
 
         // Wizard 이름 mp 테스트
         assertThrows(IllegalArgumentException.class, () -> {
-            wizard.setWizardName(null);
+            wizard.setName(null);
         });
         assertThrows(IllegalArgumentException.class, () -> {
-            wizard.setWizardName("ab");
+            wizard.setName("ab");
         });
         assertThrows(IllegalArgumentException.class, () -> {
-            wizard.setWizardMp(-1);
+            wizard.setMp(-1);
         });
 
 
         // Wand 이름, 마력 테스트
         assertThrows(IllegalArgumentException.class, () -> {
-            wand.setWandName(null);
+            wand.setName(null);
         });
         assertThrows(IllegalArgumentException.class, () -> {
-            wand.setWandName("ab");
+            wand.setName("ab");
         });
         assertThrows(IllegalArgumentException.class, () -> {
-            wand.setWandPower(0.4);
+            wand.setPower(0.4);
         });
         assertThrows(IllegalArgumentException.class, () -> {
-            wand.setWandPower(100.1);
+            wand.setPower(100.1);
         });
     }
 }

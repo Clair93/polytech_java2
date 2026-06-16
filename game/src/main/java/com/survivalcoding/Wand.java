@@ -6,15 +6,15 @@ public class Wand {
 
 
     Wand(String name, double power) {
-        setWandName(name);
-        setWandPower(power);
+        setName(name);
+        setPower(power);
     }
 
     public String getWandName() {
         return name;
     }
 
-    public void setWandName(String name) {
+    public void setName(String name) {
         if (name == null) {
             throw new IllegalArgumentException("지팡이의 이름을 반드시 입력해야 합니다.");
         }
@@ -24,11 +24,11 @@ public class Wand {
         this.name = name;
     }
 
-    public double getWandPower() {
+    public double getPower() {
         return power;
     }
 
-    public void setWandPower(double power) {
+    public void setPower(double power) {
         if (power < 0.5 || power > 100) {
             throw new IllegalArgumentException("지팡이 마력은 0.5이상 100.0 이하여야 한다.");
         }
