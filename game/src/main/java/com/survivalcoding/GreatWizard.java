@@ -9,23 +9,23 @@ public class GreatWizard extends Wizard {
     }
 
     @Override
-    void heal() {
+    void heal(Hero hero) {
         if (getMp() < 5) {
             System.out.println("마나가 부족합니다.");
         } else {
             setMp(getMp() - 5);
-            setHp(getHp() + 25);
-            System.out.println("힐을 시전했습니다. " + getName() + " HP : " + getHp());
+            hero.setHp(hero.getHp() + 25);
+            System.out.println("힐을 시전했습니다. " + hero.getName() + " HP : " + hero.getHp());
         }
     }
 
-    void superHeal() {
+    void superHeal(Hero hero) {
         if (getMp() < 50) {
             System.out.println("마나가 부족합니다.");
         } else {
             setMp(getMp() - 50);
-            setHp(maxHp);
-            System.out.println("슈퍼 힐을 시전했습니다. " + getName() + " HP : " + getHp());
+            hero.setHp(hero.getMaxHp());
+            System.out.println("슈퍼 힐을 시전했습니다. " + hero.getName() + " HP : " + hero.getHp());
         }
     }
 }

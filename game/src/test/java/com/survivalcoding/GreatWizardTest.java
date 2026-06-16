@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GreatWizardTest {
+    private Hero hero;
     private Wizard wizard;
     private GreatWizard greatWizard;
     private int WHP = 100;
@@ -16,6 +17,7 @@ class GreatWizardTest {
 
     @BeforeEach
     void Every() {
+        hero = new Hero("유해진", WHP);
         wizard = new Wizard("마법사", WHP, WMP);
         greatWizard = new GreatWizard("위대한마법사", GHP, GMP);
     }
@@ -23,26 +25,26 @@ class GreatWizardTest {
     @Test
     @DisplayName("Wizard heal에 따른 마나 감소와 체력 증가")
     void wizradHeal() {
-        wizard.heal();
+        wizard.heal(hero);
         assertEquals(90, wizard.getMp());
-        assertEquals(120, wizard.getHp());
+        assertEquals(120, hero.getHp());
 
         for (int i = 0; i < 10; i++) {
-            wizard.heal();
+            wizard.heal(hero);
         }
         assertEquals(0, wizard.getMp());
-        assertEquals(300, wizard.getHp());
+        assertEquals(300, hero.getHp());
     }
 
     @Test
     @DisplayName("GreatWizard Heal 계산")
     void greatWizardHeal() {
-        greatWizard.heal();
+        greatWizard.heal(hero);
         assertEquals(145, greatWizard.getMp());
-        assertEquals(225, greatWizard.getHp());
+        assertEquals(125, hero.getHp());
 
-        greatWizard.superHeal();
+        greatWizard.superHeal(hero);
         assertEquals(95, greatWizard.getMp());
-        assertEquals(300, greatWizard.getHp());
+        assertEquals(300, hero.getHp());
     }
 }

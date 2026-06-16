@@ -13,8 +13,7 @@ class PoisonSlimeTest {
 
     @BeforeEach
     void Every() {
-        hero = new Hero();
-        hero.setHp(HP);
+        hero = new Hero("유해진", HP);
         poisonSlime = new PoisonSlime("A");
     }
 

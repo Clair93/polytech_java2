@@ -75,13 +75,13 @@ public class Wizard {
         this.name = name;
     }
 
-    void heal() {
+    void heal(Hero hero) {
         if (this.mp < 10) {
             System.out.println("마나가 부족합니다.");
         } else {
             this.mp -= 10;
-            this.hp += 20;
-            System.out.println("힐을 시전했습니다. " + this.name + "HP: " + this.hp);
+            hero.setHp(hero.getHp() + 20);
+            System.out.println("힐을 시전했습니다. " + hero.getName() + " HP : " + hero.getHp());
         }
     }
 }
